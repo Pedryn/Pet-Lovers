@@ -1,9 +1,10 @@
 import Entrada from "../../io/entrada";
 import Produto from "../../modelo/produto";
 import Empresa from "../../modelo/empresa";
-import Cadastro from "../cadastro";
+import Cadastro, { CadastroPro } from "../cadastro";
 
-export default class CadastroProduto extends Cadastro {
+export default class CadastroProduto extends CadastroPro {
+    
     private empresa: Empresa;
     private entrada: Entrada;
 
@@ -13,7 +14,7 @@ export default class CadastroProduto extends Cadastro {
         this.entrada = new Entrada();
     }
 
-    public cadastrar(): void {
+    public cadastrarProduto(): void {
         console.log(`\nInício do cadastro de produto`);
         let nome = this.entrada.receberTexto(`Por favor informe o nome do produto: `);
         let descricao = this.entrada.receberTexto(`Por favor informe a descrição do produto: `);

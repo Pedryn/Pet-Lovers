@@ -15,7 +15,6 @@ import ListagemClientes from "../negocio/cliente/listagemClientes";
 import ListagemProduto from "../negocio/produtos/listagemProdutos";
 import DeletarProduto from "../negocio/produtos/deletarProd";
 import AtualizarProduto from "../negocio/produtos/atualizaProd";
-import listaDeProdutos from "../insert/insertProduto";
 import CadastroServico from "../negocio/servico/cadastrarServico";
 import ListagemServico from "../negocio/servico/listagemServico";
 import AtualizarServico from "../negocio/servico/atualizarServico";
@@ -66,7 +65,7 @@ while (execucao) {
     switch (opcao) {
         case 1:
             let cadastro = new CadastroCliente(empresa.getClientes)
-            cadastro.cadastrar()
+            cadastro.cadastrarCliente()
             break;
         case 2:
             let listagem = new ListagemClientes(empresa.getClientes)
@@ -104,7 +103,7 @@ while (execucao) {
         case 9:
             // Cadastro de produto
             let cadastroProd = new CadastroProduto(empresa);
-            cadastroProd.cadastrar();
+            cadastroProd.cadastrarProduto();
             break;
 
         case 10:
@@ -113,22 +112,21 @@ while (execucao) {
             break;
         case 11:
             // Deletar produto
-            let deletarP = new DeletarProduto(listaDeProdutos);
+            let deletarP = new DeletarProduto(empresa.getProdutos);
             deletarP.deletarProduto();
 
             let deletarPro = new DeletarProduto(empresa.getProdutos);
             deletarPro.deletarProduto();
             break;
 
-            case 12:
-                // Atualizar produto
-                let atualizarP = new AtualizarProduto(listaDeProdutos);
-                atualizarP.atualizarProduto();
-            
-                let atualizarPro = new AtualizarProduto(empresa.getProdutos);
-                atualizarPro.atualizarProduto();
-                break;
-            
+        case 12:
+            // Atualizar produto
+            let atualizarP = new AtualizarProduto(empresa.getProdutos);
+            atualizarP.atualizarProduto();    
+            let atualizarPro = new AtualizarProduto(empresa.getProdutos);
+            atualizarPro.atualizarProduto();
+            break;
+        
         case 13:
             let cadastroSer = new CadastroServico(empresa.getServicos)
             cadastroSer.cadastrarServico()
