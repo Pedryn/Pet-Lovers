@@ -16,10 +16,12 @@ Certifique-se de ter o ambiente de desenvolvimento configurado corretamente. Uti
 
 ```bash
 # Instalar as dependências
+cd frontend
 npm install
-npx tsc
+npm start
 
-
+cd executavel
+java -jar pl.jar
 # Executar o projeto
 cd /out/app
 node main.js
