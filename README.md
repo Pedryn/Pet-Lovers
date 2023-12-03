@@ -22,6 +22,3 @@ npm start
 
 cd executavel
 java -jar pl.jar
-# Executar o projeto
-cd /out/app
-node main.js
